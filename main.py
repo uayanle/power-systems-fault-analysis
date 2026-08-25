@@ -1,5 +1,6 @@
 from calculations import calculate_transformer_impedance, calculate_cable_impedance, calculate_fault_current, calculate_fault_level, calculate_voltage_drop
 from components import Transformer, Cable, PowerSystem
+from validations import validate_positive_number, validate_transformer, validate_cable
 
 # Create instances of Transformer and Cable
 transformer = Transformer(rating=2_000_000, voltage=11_000, impedance=6)
