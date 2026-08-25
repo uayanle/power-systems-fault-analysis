@@ -25,6 +25,3 @@ def validate_cable(length, impedance_per_km):
     impedance_per_km = validate_positive_number(impedance_per_km)
 
     return length, impedance_per_km
-
-
-print(validate_positive_number(-10))

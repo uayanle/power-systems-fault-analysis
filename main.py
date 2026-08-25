@@ -50,9 +50,3 @@ print("Total impedance:", total_impedance, "Ω")
 print("Fault current:", fault_current, "A")
 print("Fault level:", fault_level, "MVA")
 print("Voltage drop:", voltage_drop, "V")
-
-transformer = Transformer(
-    rating=-2_000_000,
-    voltage=11_000,
-    impedance=6
-)
