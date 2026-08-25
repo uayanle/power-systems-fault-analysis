@@ -1,8 +1,8 @@
 def validate_positive_number(value):
     try:
         number = float(value)
-        if number <= 0:
-            raise ValueError("The value must be a positive number.")
+    except (ValueError, TypeError):
+        raise ValueError("The value must be a positive number.")
     except (ValueError, TypeError):
         raise ValueError("The value must be a valid number.")
 
@@ -25,3 +25,6 @@ def validate_cable(length, impedance_per_km):
     impedance_per_km = validate_positive_number(impedance_per_km)
 
     return length, impedance_per_km
+
+
+print(validate_positive_number(-10))

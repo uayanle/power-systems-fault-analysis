@@ -6,7 +6,7 @@ class Transformer:
 
 
 transformer1 = Transformer(
-    2_000_000,
+    -2_000_000,
     11_000,
     6,
 )
