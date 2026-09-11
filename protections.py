@@ -12,3 +12,13 @@ def load_breakers():
 
 
 print(load_breakers())
+
+
+def select_breaker(fault_current_kA):
+    breakers = load_breakers()
+    suitable_breakers = [
+        breaker for breaker in breakers if breaker['rating_kA'] >= fault_current_kA]
+    if suitable_breakers:
+        return min(suitable_breakers, key=lambda x: x['rating_kA'])
+    else:
+        return None
