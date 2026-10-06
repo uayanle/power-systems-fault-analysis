@@ -1,6 +1,8 @@
 from calculations import calculate_transformer_impedance, calculate_cable_impedance, calculate_fault_current, calculate_fault_level, calculate_voltage_drop
 from components import Transformer, Cable, PowerSystem
 from validations import validate_transformer, validate_cable
+from protections import select_breaker
+
 
 # Create instances of Transformer and Cable
 transformer = Transformer(rating=2_000_000, voltage=11_000, impedance=6)
@@ -31,6 +33,10 @@ fault_current = calculate_fault_current(
     total_impedance
 )
 
+fault_current_kA = fault_current / 1000  # Convert to kA
+selected_breaker = select_breaker(fault_current_kA)
+
+
 # Calculate fault level
 fault_level = calculate_fault_level(
     transformer_cable_system.transformer.voltage,
@@ -50,3 +56,4 @@ print("Total impedance:", total_impedance, "Ω")
 print("Fault current:", fault_current, "A")
 print("Fault level:", fault_level, "MVA")
 print("Voltage drop:", voltage_drop, "V")
+print("Selected breaker:", selected_breaker)
