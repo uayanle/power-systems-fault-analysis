@@ -11,9 +11,6 @@ def load_breakers():
     return breakers
 
 
-print(load_breakers())
-
-
 def select_breaker(fault_current_kA):
     breakers = load_breakers()
     suitable_breakers = [
